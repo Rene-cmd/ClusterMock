@@ -1,4 +1,4 @@
-Proxmox Cluster with High Availability and Kubernetes Deployment
+# Proxmox Cluster with High Availability and Kubernetes Deployment
 
 This README provides a step-by-step guide to setting up a Proxmox cluster with High Availability (HA) and deploying Linux servers to run a Kubernetes cluster. This setup is ideal for educational purposes or as part of an exam project.
 Table of Contents
@@ -16,7 +16,7 @@ Table of Contents
     Troubleshooting
     Conclusion
 
-Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have the following:
 
@@ -27,7 +27,7 @@ Before you begin, ensure you have the following:
     Basic Knowledge: Familiarity with Proxmox, Linux command line, and Kubernetes concepts.
 
 Cluster Setup
-Step 1: Install Proxmox VE
+### Step 1: Install Proxmox VE
 
     Download Proxmox VE:
         Visit the Proxmox Download Page and download the latest Proxmox VE ISO image.
@@ -39,7 +39,7 @@ Step 1: Install Proxmox VE
         Configure network settings, hostname, and root password during installation.
         Once installed, access the Proxmox web interface via https://<server-ip>:8006.
 
-Step 2: Configure Proxmox Cluster
+### Step 2: Configure Proxmox Cluster
 
     Create the Cluster:
         On the first node, run the following command to create the cluster:
@@ -50,7 +50,7 @@ Step 2: Configure Proxmox Cluster
 
     Note down the join command provided after cluster creation.
 
-Join Other Nodes:
+#### Join Other Nodes:
 
     SSH into each additional Proxmox node and run the join command obtained in the previous step:
 
@@ -58,7 +58,7 @@ Join Other Nodes:
 
     pvecm add <ip-of-first-node>
 
-Verify Cluster Status:
+#### Verify Cluster Status:
 
     On the primary node, verify that all nodes have joined the cluster:
 
@@ -68,7 +68,7 @@ Verify Cluster Status:
 
         You should see all nodes listed in the cluster.
 
-Step 3: Enable High Availability (HA)
+###Step 3: Enable High Availability (HA)
 
     Configure HA Manager:
         On the Proxmox web interface, navigate to Datacenter -> HA -> Resources.
